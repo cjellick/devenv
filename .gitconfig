@@ -1,0 +1,16 @@
+
+[hub]
+protocol = https
+
+[core]
+pager = cat
+excludesfile = /opt/boxen/config/git/gitignore
+editor = mvim -gf
+
+[alias]
+hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[credential]
+[user]
+	name = Craig Jellick
+	email = craig@rancher.com
