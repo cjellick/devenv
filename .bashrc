@@ -1,5 +1,6 @@
 ## Terminal
-PS1="\w$ "
+PS1="\W$ "
+
 export EDITOR='mvim'
 alias ..='cd ..'
 alias ...='cd ../..'

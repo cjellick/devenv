@@ -17,3 +17,7 @@ cajpurge() {
     [[ -z "${1}" ]] && [[ ! -z "${remove}" ]] && docker rm -fv ${remove}
     [[ "${1}" == "-a" ]] && docker rm -fv $(docker ps -qa)
 }
+
+deploy_agent() {
+    docker run -e CATTLE_AGENT-IP=$(dm ip docker-190) -d --privileged -v /var/run/docker.sock:/var/run/docker.sock rancher/agent:v0.8.2 $1
+}
