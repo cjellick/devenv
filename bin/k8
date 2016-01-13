@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export GOPATH=~/gprojects/kubernetes
+cd ~/gprojects/kubernetes/src/k8s.io/kubernetes
+PS1="($(basename $(pwd)))$PS1"

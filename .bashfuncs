@@ -1,0 +1,19 @@
+
+watch() {
+    while :; do
+        clear
+        date
+        $1
+        sleep 1
+    done
+}
+
+cajpurge() {
+    rancher_agent_state=$(docker inspect rancher-agent-state | jq -r .[0].Id)
+    rancher_agent_state=${rancher_agent_state:0:12}
+
+    remove=$(docker ps -qa | grep -v ${rancher_agent_state})
+
+    [[ -z "${1}" ]] && [[ ! -z "${remove}" ]] && docker rm -fv ${remove}
+    [[ "${1}" == "-a" ]] && docker rm -fv $(docker ps -qa)
+}

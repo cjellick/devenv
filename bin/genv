@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export GOPATH=~/gprojects/$(basename $1)
+cd ~/gprojects/$(basename $1)/src/github.com/$1
+PS1="($(basename $(pwd)))$PS1"
