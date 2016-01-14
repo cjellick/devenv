@@ -21,3 +21,7 @@ cajpurge() {
 deploy_agent() {
     docker run -e CATTLE_AGENT-IP=$(dm ip docker-190) -d --privileged -v /var/run/docker.sock:/var/run/docker.sock rancher/agent:v0.8.2 $1
 }
+
+cdp() {
+    cd $HOME/projects/$1
+}
