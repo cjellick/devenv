@@ -56,7 +56,6 @@ github-release release \
     --user $ORG \
     --repo $REPO \
     --tag "$TAG" \
-    --draft
 
 for i in $(ls dist/artifacts); do
     github-release upload \
