@@ -20,6 +20,7 @@ alias cajdropdb="$CH/resources/content/db/mysql/drop_tables.sh; rm $CH/resources
 alias tr='docker exec -it rancher-agent tail -f /var/log/rancher/agent.log'
 alias cleanstate="docker rm -fv rancher-agent-state; dm ssh docker-190-big 'sudo rm -rf /var/lib/rancher/'"
 alias dierc='pkill -9 rancher-catalog'
+alias cajtty='docker exec -it rancher-agent bash'
 
 # Build tools and 10-acre on path
 export PATH=$HOME/projects/build-tools/bin:$HOME/projects/10acre-ranch/bin:$CH/tools/development:$PATH
@@ -31,12 +32,11 @@ export CATTLE_DOCKER_USE_BOOT2DOCKER=true
 # Add docker machine repo to path incase we build custom docker-machine
 export PATH=$HOME/gprojects/machine/src/github.com/docker/machine/bin:$PATH
 
-alias cajll='docker ps -a'
-alias cajb='docker build'
-alias cajt='docker logs -f --tail=100'
-alias cajtty='docker exec -it rancher-agent bash'
-alias caje='docker exec -it'
-alias cajv='docker volume'
+alias dll='docker ps -a'
+alias db='docker build'
+alias dt='docker logs -f --tail=100'
+alias de='docker exec -it'
+alias dv='docker volume'
 alias dm='docker-machine'
 alias dc='docker-compose'
 alias imageclean='docker rmi $(docker images -f dangling=true -qa)'
@@ -49,7 +49,7 @@ alias ga='git add'
 alias gccc='git checkout'
 alias gh='git hist'
 alias cajhs='history | grep'
-
+alias gitsquash='git rebase -i'
 
 ## Java
 export M2_HOME=/usr/local/apache-maven/apache-maven-3.2.3
