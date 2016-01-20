@@ -31,7 +31,7 @@ init_genv() {
     mkdir -p $HOME/gprojects/$(basename $1)/src/$(dirname $1)
     cd $HOME/gprojects/$(basename $1)/src/$(dirname $1)
     export GOPATH=$HOME/gprojects/$(basename $1)
-    echo $(basename $(dirname $1))/$(basename $1)
+    go get $1
     genv $(basename $(dirname $1))/$(basename $1)
 }
 
