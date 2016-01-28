@@ -10,6 +10,7 @@ editor = mvim -gf
 [alias]
 hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 cm = checkout master
+nopush = remote set-url --push origin no_push
 
 [credential]
 [user]
