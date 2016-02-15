@@ -40,3 +40,10 @@ genv() {
     cd ~/gprojects/$(basename $1)/src/github.com/$1
     PS1="($(basename $(pwd)))$PS1"
 }
+
+go15() {
+    export PATH=/usr/local/go1.5/bin:$PATH
+    export GOROOT=/usr/local/go1.5
+    export GO15VENDOREXPERIMENT=1
+}
+
