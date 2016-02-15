@@ -47,3 +47,6 @@ go15() {
     export GO15VENDOREXPERIMENT=1
 }
 
+vmssh() {
+    ssh rancher@192.168.$1
+}
