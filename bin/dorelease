@@ -2,15 +2,15 @@
 
 set -e
 
-if [ $# -ne 1 ]; then
-    echo "Usage: dorelease repo-name"
+if [ $# -ne 2 ]; then
+    echo "Usage: dorelease org repo-name"
     exit 1
 fi
 
 : ${GITHUB_TOKEN?"Need to set GITHUB_TOKEN"}
 RELEASE_DIR=${RELEASE_DIR:-"$HOME/release"}
-ORG=rancher
-REPO=$1
+ORG=$1
+REPO=$2
 
 if ! $(type github-release > /dev/null 2>/dev/null); then
     echo "OK to install github-release (Y/n)"?
