@@ -33,7 +33,8 @@ export PATH=$HOME/projects/build-tools/bin:$HOME/projects/10acre-ranch/bin:$CH/t
 
 
 ## Docker
-eval "$(docker-machine env docker10)"
+# switching to using custom ros vm
+# eval "$(docker-machine env docker10)"
 export CATTLE_DOCKER_USE_BOOT2DOCKER=true
 # Add docker machine repo to path incase we build custom docker-machine
 export PATH=$HOME/gprojects/machine/src/github.com/docker/machine/bin:$PATH
