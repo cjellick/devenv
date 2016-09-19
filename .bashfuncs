@@ -48,6 +48,20 @@ go15() {
     export PATH=/usr/local/go1.5/bin:$GOPATH/bin:$PATH
 }
 
+go16() {
+    if [ "$(readlink /usr/local/go)" != "/usr/local/go1.6" ]; then
+        rm /usr/local/go
+        ln -s /usr/local/go1.6 /usr/local/go
+    fi
+}
+
+go17() {
+    if [ "$(readlink /usr/local/go)" != "/usr/local/go1.7" ]; then
+        rm /usr/local/go
+        ln -s /usr/local/go1.7 /usr/local/go
+    fi
+}
+
 vmssh() {
     ssh rancher@192.168.$1
 }
