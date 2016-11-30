@@ -25,7 +25,7 @@ alias CH="cd $CH"
 alias cajdropdb="$CH/resources/content/db/mysql/drop_tables.sh; rm $CH/resources/content/db/mysql/cattle_dump*"
 alias tr='docker exec -it rancher-agent tail -f /var/log/rancher/agent.log'
 alias cleanstate="docker rm -fv rancher-agent-state; dm ssh docker10 'sudo rm -rf /var/lib/rancher/'"
-alias dierc='pkill -9 rancher-catalog; pkill -9 rancher-compose-executor; pkill -9 scheduler'
+alias dierc='pkill -9 rancher-catalog; pkill -9 rancher-compose-executor; pkill -9 scheduler; pkill -9 webhook-service'
 alias cajtty='docker exec -it rancher-agent bash'
 
 # Build tools and 10-acre on path
