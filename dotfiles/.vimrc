@@ -1,5 +1,6 @@
 set lines=70
 set columns=200
+set mouse=a
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
