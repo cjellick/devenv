@@ -1,6 +1,5 @@
 *.sw[klmnop]
 .idea
-.DS_Store
 .dapper
 *.iml
 .vscode

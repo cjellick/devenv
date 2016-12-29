@@ -10,7 +10,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 Plugin 'fatih/vim-go'
 
@@ -55,9 +55,9 @@ set transparency=10
 set background=dark
 set guifont=Monaco:h16
 
-" autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree
 
-colorscheme 3dglasses 
+" colorscheme 3dglasses 
 
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif

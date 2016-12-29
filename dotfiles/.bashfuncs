@@ -1,0 +1,30 @@
+#!/bin/bash
+
+cajpurge() {
+    rancher_agent_state=$(docker inspect rancher-agent-state | jq -r .[0].Id)
+    rancher_agent_state=${rancher_agent_state:0:12}
+
+    remove=$(docker ps -qa | grep -v ${rancher_agent_state})
+
+    [[ -z "${1}" ]] && [[ ! -z "${remove}" ]] && docker rm -fv ${remove}
+    [[ "${1}" == "-a" ]] && docker rm -fv $(docker ps -qa)
+}
+
+cdp() {
+    cd $HOME/projects/$1
+}
+
+genv() {
+    export GOPATH=~/gprojects/$(basename $1)
+    cd ~/gprojects/$(basename $1)/src/github.com/$1
+    PS1="($(basename $(pwd)))$PS1"
+}
+
+vmssh() {
+    ssh rancher@192.168.$1
+}
+
+sourcedocker() {
+    export DOCKER_HOST=tcp://192.168.$1:2375
+    docker ps -a
+}
