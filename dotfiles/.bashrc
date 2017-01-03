@@ -35,6 +35,7 @@ alias imageclean='docker rmi $(docker images -f dangling=true -qa)'
 #export PATH=$HOME/gprojects/machine/src/github.com/docker/machine/bin:$PATH
 
 ## Git
+source ~/devenv/git-completion.bash
 alias gd='git diff'
 alias gs='git status'
 alias ga='git add'
