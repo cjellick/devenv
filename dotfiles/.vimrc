@@ -52,11 +52,10 @@ set softtabstop=4
 set hidden
 nmap :Q :q
 
-set transparency=10
 set background=dark
 set guifont=Monaco:h16
 
-autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree | wincmd p
 
 " colorscheme 3dglasses 
 
@@ -71,3 +70,5 @@ nmap <F8> :TagbarToggle<CR>
 "autocmd VimEnter * nested :TagbarOpen
 set completeopt=menu
 
+" Close NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
