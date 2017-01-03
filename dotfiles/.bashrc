@@ -68,7 +68,7 @@ PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 
 
 
-
+setxkbmap -option ctrl:swapcaps
 
 # Never use
 #alias ..='cd ..'
