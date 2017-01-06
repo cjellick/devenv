@@ -10,6 +10,12 @@ bin:
 	done
 
 dotfiles:
+	# First alias the completion files
+	for file in $(shell find $(CURDIR)/dotfiles -name ".*completion.bash" -not -name ".gitignore" -not -name ".git" -not -name ".*.swp"); do \
+		f=$$(basename $$file); \
+		ln -sfn $$file $(HOME)/$$f; \
+	done
+	
 	# add aliases for dotfiles
 	for file in $(shell find $(CURDIR)/dotfiles -name ".*" -not -name ".gitignore" -not -name ".git" -not -name ".*.swp"); do \
 		f=$$(basename $$file); \

@@ -15,7 +15,7 @@ export CH=~/projects/cattle
 alias CH="cd $CH"
 alias cajdropdb="$CH/resources/content/db/mysql/drop_tables.sh; rm $CH/resources/content/db/mysql/cattle_dump*"
 # TODO Convert to killall
-alias dierc='pkill -9 rancher-auth-service; pkill -9 rancher-catalog; pkill -9 rancher-compose-executor; pkill -9 scheduler; pkill -9 webhook-service'
+alias dierc='killall -9 rancher-auth-service 2>/dev/null; killall -9 rancher-catalog 2>/dev/null; killall -9 rancher-compose-executor 2>/dev/null; killall -9 scheduler 2>/dev/null 2>/dev/null; killall -9 webhook-service 2>/dev/null'
 
 
 # Build tools and 10-acre on path
@@ -30,12 +30,13 @@ alias dv='docker volume'
 alias dm='docker-machine'
 alias dc='docker-compose'
 alias imageclean='docker rmi $(docker images -f dangling=true -qa)'
+source ~/.docker-completion.bash
 # TODO Reenable if you go back to using machine
 # Add docker machine repo to path incase we build custom docker-machine
 #export PATH=$HOME/gprojects/machine/src/github.com/docker/machine/bin:$PATH
 
 ## Git
-source ~/devenv/git-completion.bash
+source ~/.git-completion.bash
 alias gd='git diff'
 alias gs='git status'
 alias ga='git add'
