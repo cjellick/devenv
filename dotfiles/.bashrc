@@ -21,6 +21,11 @@ alias dierc='killall -9 rancher-auth-service 2>/dev/null; killall -9 rancher-cat
 # Build tools and 10-acre on path
 export PATH=$HOME/projects/build-tools/bin:$HOME/projects/10acre-ranch/bin:$CH/tools/development:$PATH
 
+## Tab completion
+source ~/.docker-completion.bash
+source ~/.git-completion.bash
+source ~/.hub-completion.bash
+
 ## Docker
 alias dll='docker ps -a'
 alias db='docker build'
@@ -30,13 +35,11 @@ alias dv='docker volume'
 alias dm='docker-machine'
 alias dc='docker-compose'
 alias imageclean='docker rmi $(docker images -f dangling=true -qa)'
-source ~/.docker-completion.bash
 # TODO Reenable if you go back to using machine
 # Add docker machine repo to path incase we build custom docker-machine
 #export PATH=$HOME/gprojects/machine/src/github.com/docker/machine/bin:$PATH
 
 ## Git
-source ~/.git-completion.bash
 alias gd='git diff'
 alias gs='git status'
 alias ga='git add'
