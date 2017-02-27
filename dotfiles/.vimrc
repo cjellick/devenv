@@ -50,6 +50,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set hidden
+set clipboard=unnamed
 nmap :Q :q
 
 set background=dark

@@ -9,13 +9,13 @@ export VISUAL=vim
 source "$HOME/.bashfuncs"
 
 ## Rancher/cattle
-export CATTLE_URL=http://localhost:8080/v2-bet
+export CATTLE_URL=http://localhost:8080/v2-beta
 export CATTLE_HOME=$HOME/cattle-home
 export CH=~/projects/cattle
 alias CH="cd $CH"
-alias cajdropdb="$CH/resources/content/db/mysql/drop_tables.sh; rm $CH/resources/content/db/mysql/cattle_dump*"
+alias cajdropdb="$CH/resources/content/db/mysql/reload_db.sh; rm $CH/resources/content/db/mysql/cattle_dump*"
 # TODO Convert to killall
-alias dierc='killall -9 rancher-auth-service 2>/dev/null; killall -9 rancher-catalog 2>/dev/null; killall -9 rancher-compose-executor 2>/dev/null; killall -9 scheduler 2>/dev/null 2>/dev/null; killall -9 webhook-service 2>/dev/null'
+alias dierc='killall -9 rancher-auth-service 2>/dev/null; killall -9 rancher-catalog-service 2>/dev/null; killall -9 rancher-compose-executor 2>/dev/null; killall -9 scheduler 2>/dev/null 2>/dev/null; killall -9 webhook-service 2>/dev/null'
 
 
 # Build tools and 10-acre on path
